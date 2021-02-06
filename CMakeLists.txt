@@ -1,0 +1,13 @@
+project(kalmanfilter)
+cmake_minimum_required(VERSION 3.8)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
+set(PROJECT_NAME kalman)
+set(CMAKE_CXX_FLAGS_DEBUG "-g3 -O0 -pg")
+set(CMAKE_CXX_FLAGS_RELEASE "-O1 -s")
+find_package(Boost 1.65.1 REQUIRED COMPONENTS date_time system)
+find_package(Threads REQUIRED)
+
+include_directories(${PROJECT_SOURCE_DIR}/eigen)
+add_executable(${PROJECT_NAME} main.cpp EKF.cpp) 
+target_link_libraries(${PROJECT_NAME} Boost::system ${CMAKE_THREAD_LIBS_INIT} Threads::Threads)
