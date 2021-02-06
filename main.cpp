@@ -31,9 +31,9 @@ int main(void)
         fprintf(gp, "e\n");
         fprintf(gp, "%f %f\n", kf.xOddm(0), kf.xOddm(1));
         fprintf(gp, "e\n");
-        fprintf(gp, "%f %f\n", kf.xDes(0), kf.xDes(1)); //目標座標
+        fprintf(gp, "%f %f\n", kf.xDes(0), kf.xDes(1)); //真値
         fprintf(gp, "e\n");
-        fprintf(gp, "%f %f\n", kf.xLidar(0), kf.xLidar(1)); //目標座標
+        fprintf(gp, "%f %f\n", kf.xLidar(0), kf.xLidar(1)); //LiDARの観測値
         fprintf(gp, "e\n");
         x_est.push_back(kf.xEst(0));
         y_est.push_back(kf.xEst(1));
